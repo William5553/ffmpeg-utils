@@ -1,0 +1,19 @@
+{
+  "name": "ffmpeg-utils",
+  "version": "1.0.0",
+  "description": "General utilities for FFMPEG",
+  "scripts": {
+    "build-win": "pkg -o built/convertmp4 -t node18-win-x64 convertmp4.js && pkg -o built/compress -t node18-win-x64 compress.js",
+    "build-mac": "pkg -o built/convertmp4 -t node18-macos-x64 convertmp4.js && pkg -o built/compress -t node18-macos-x64 compress.js",
+    "build-linux": "pkg -o built/convertmp4 -t node18-linux-x64 convertmp4.js && pkg -o built/compress -t node18-linux-x64 compress.js",
+    "build": "npm run build-win && npm run build-mac && npm run build-linux"
+  },
+  "author": "William Kang",
+  "license": "MIT",
+  "dependencies": {
+    "fluent-ffmpeg": "^2.1.2"
+  },
+  "devDependencies": {
+    "pkg": "^5.8.1"
+  }
+}
