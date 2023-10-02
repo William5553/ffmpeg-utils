@@ -5,9 +5,11 @@
   "packageManager": "pnpm@8.8.0",
   "scripts": {
     "build-win": "pkg -o built/convertmp4 -t node18-win-x64 src/convertmp4.js && pkg -o built/compress -t node18-win-x64 src/compress.js",
-    "build-mac": "pkg -o built/convertmp4 -t node18-macos-x64 src/convertmp4.js && pkg -o built/compress -t node18-macos-x64 src/compress.js",
-    "build-linux": "pkg -o built/convertmp4 -t node18-linux-x64 src/convertmp4.js && pkg -o built/compress -t node18-linux-x64 src/compress.js",
-    "build": "npm run build-win && npm run build-mac && npm run build-linux"
+    "build-mac": "pkg -o built/convertmp4-mac -t node18-macos-x64 src/convertmp4.js && pkg -o built/compress-mac -t node18-macos-x64 src/compress.js",
+    "build-linux": "pkg -o built/convertmp4-linux -t node18-linux-x64 src/convertmp4.js && pkg -o built/compress-linux -t node18-linux-x64 src/compress.js",
+    "build": "npm run build-win && npm run build-mac && npm run build-linux",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "author": "William Kang",
   "license": "MIT",

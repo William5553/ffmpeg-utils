@@ -35,5 +35,9 @@ jobs:
             prerelease: false
             automatic_release_tag: ${{ github.sha }}
             files: |
-                LICENSE.txt
-                built/
+                compress.exe
+                compress-mac
+                compress-linux
+                convertmp4.exe
+                convertmp4-mac
+                convertmp4-linux
