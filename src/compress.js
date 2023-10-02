@@ -1,8 +1,8 @@
+#!/usr/bin/env node
 const ffmpeg = require('fluent-ffmpeg');
 
-if (process.argv.length < 3) return console.log("input a file nerd");
-
-for (const fileLocation of process.argv.slice(2)) {
+if (process.argv.length < 3) console.log('input a file nerd');
+else for (const fileLocation of process.argv.slice(2)) {
     const source = fileLocation.toString().trim();
     const outputName = `${source.split('.').slice(0, -1).join('.')}_converted.mp4`;
 
@@ -17,7 +17,7 @@ for (const fileLocation of process.argv.slice(2)) {
         .on('error', err => console.log(`Cannot process video: ${err.message}`));
 }
 
-console.log("Press Ctrl+C to exit")
+console.log('Press Ctrl+C to exit');
 process.stdin.setRawMode(true);
 process.stdin.resume();
 process.stdin.on('data', key => {
